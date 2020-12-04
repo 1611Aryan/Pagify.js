@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <main>
+
+        <form>
+
+            <div class="heading">
+                <h2>Form Heading</h2>
+            </div>
+
+            <div class="pageContainer" id="pageContainer">
+                <div class="page">
+                    <div class="formChild">
+                        <div class="inputContainer">
+                            <label for="name">Your Name:</label>
+                            <input name="name" id="name" type="text" placeholder="He who must not be named">
+                        </div>
+                        <div class="inputContainer">
+                            <label for="stream">Your Stream:</label>
+                            <input name="stream" id="stream" type="text" placeholder="Defence Against Dark Arts">
+                        </div>
+                        <div class="inputContainer">
+                            <label for="rollNumber">Your Roll No.</label>
+                            <input name="rollNumber" id="rollNumber" type="text" placeholder="1234567890" inputmode="tel">
+                        </div>
+                    </div>
+                </div>
+                <!--Next Page-->
+                <div class="page">
+                    <div class="formChild">
+                        <div class="inputContainer">
+                            <label for="ques1"> Question 1</label>
+                            <textarea name="ques1" id="ques1" rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!--Next Page-->
+                <div class="page">
+                    <div class="formChild">
+                        <div class="inputContainer">
+                            <label for="ques2">Question 2</label>
+                            <textarea name="ques2" id="ques2" rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!--Next Page-->
+                <div class="page">
+                    <div class="formChild">
+                        <div class="inputContainer">
+                            <label for="ques3">Question 3</label>
+                            <textarea name="ques3" id="ques3" rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!--Next Page-->
+                <div class="page">
+                    <div class="formChild">
+                        <div class="inputContainer">
+                            <label for="ques4">Question 4</label>
+                            <textarea name="ques4" id="ques4" rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btnContainer">
+                <button id="previous_button">Previous</button>
+                <button id="next_button">Next</button>
+                <button id="submit_button">Submit</button>
+            </div>
+
+        </form>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

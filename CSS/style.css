@@ -1,5 +1,12 @@
 :root {
   --numOfPages: 6;
+  --pageTransitionTime: 0.5s;
+  --fontColor: rgb(0, 0, 0);
+  --shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+  --mainBg: rgb(246, 255, 115);
+  --inputBg: rgba(255, 255, 255, 0.3);
+  --inputBorder: 2px solid rgb(255, 230, 87);
+  --buttonColor: rgba(77, 190, 255, 0.9);
 }
 
 .bg picture, body, main form .heading, main form .pageContainer .page, main form .pageContainer .page .formChild, main form .pageContainer .page .formChild .inputContainer, main form .btnContainer {
@@ -12,13 +19,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-main form .btnContainer {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
 }
 
 .bg picture {
@@ -43,24 +43,35 @@ main form .btnContainer {
 body {
   width: 100vw;
   height: 100vh;
-  background: #919191;
-  font-family: poppins;
+  font-family: 'Poppins', sans-serif;
 }
 
 ::-webkit-input-placeholder {
-  color: white;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--fontColor);
+  font-weight: 200;
+  font-size: clamp(0.85, 3vw, 1.25rem);
 }
 
 :-ms-input-placeholder {
-  color: white;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--fontColor);
+  font-weight: 200;
+  font-size: clamp(0.85, 3vw, 1.25rem);
 }
 
 ::-ms-input-placeholder {
-  color: white;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--fontColor);
+  font-weight: 200;
+  font-size: clamp(0.85, 3vw, 1.25rem);
 }
 
 ::placeholder {
-  color: white;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--fontColor);
+  font-weight: 200;
+  font-size: clamp(0.85, 3vw, 1.25rem);
 }
 
 .bg {
@@ -78,7 +89,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 main {
@@ -86,11 +97,11 @@ main {
   width: 40vw;
   height: 80vh;
   border-radius: 35px;
-  background: black;
+  background: var(--mainBg);
   opacity: 0.8;
   border: 2px solid #fff;
-  -webkit-box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.5);
-          box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 5px 5px 10px 5px rgba(80, 80, 80, 0.7);
+          box-shadow: 5px 5px 10px 5px rgba(80, 80, 80, 0.7);
 }
 
 main form {
@@ -108,14 +119,14 @@ main form .heading {
 
 main form .heading h2 {
   font-size: clamp(1.5rem, 4vw, 2rem);
-  color: white;
+  color: var(--fontColor);
 }
 
 main form .pageContainer {
   min-width: calc(100%*var(--numOfPages));
   height: 75%;
-  -webkit-transition: all 0.7s ease;
-  transition: all 0.7s ease;
+  -webkit-transition: all var(--pageTransitionTime) ease;
+  transition: all var(--pageTransitionTime) ease;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -162,28 +173,29 @@ main form .pageContainer .page .formChild .inputContainer {
 main form .pageContainer .page .formChild .inputContainer label,
 main form .pageContainer .page .formChild .inputContainer input {
   font-size: clamp(1rem, 3vw, 1.5rem);
-  color: white;
+  color: var(--fontColor);
 }
 
 main form .pageContainer .page .formChild .inputContainer input,
 main form .pageContainer .page .formChild .inputContainer textarea {
-  color: #ececec;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--fontColor);
   font-size: clamp(0.85, 3vw, 1.35rem);
-  padding: 0.8rem 0.5rem;
+  font-weight: 200;
+  border-radius: 10px;
+  padding: 0.8rem 0.6rem;
   width: 100%;
   outline: none;
-  background: rgba(255, 255, 255, 0.3);
+  background: var(--inputBg) !important;
   border: none;
-  border-bottom: 2px solid white;
-  border-radius: 10px;
-  -webkit-box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
-          box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+  border-bottom: var(--inputBorder);
+  -webkit-box-shadow: var(--shadow);
+          box-shadow: var(--shadow);
 }
 
 main form .btnContainer {
-  width: 80%;
+  width: 100%;
   height: 10%;
-  bottom: 0;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -197,12 +209,12 @@ main form .btnContainer button {
   height: 66.66%;
   border-radius: 20px;
   font-size: clamp(0.8rem, 2vw, 1rem);
-  background: rgba(77, 190, 255, 0.9);
+  background: var(--buttonColor);
   outline: 0;
   border: 0;
   cursor: pointer;
-  -webkit-box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
-          box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: var(--shadow);
+          box-shadow: var(--shadow);
 }
 
 main form .btnContainer #previous_button,

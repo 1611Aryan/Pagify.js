@@ -1,5 +1,12 @@
 :root {
     --numOfPages: 6;
+    --pageTransitionTime: 0.5s;
+    --fontColor: rgb(0, 0, 0);
+    --shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+    --mainBg: rgb(246, 255, 115);
+    --inputBg: rgba(255, 255, 255, 0.3);
+    --inputBorder: 2px solid rgb(255, 230, 87);
+    --buttonColor: rgba(77, 190, 255, 0.9);
 }
 
 %flex {
@@ -35,12 +42,14 @@ body {
     width: 100vw;
     height: 100vh;
     @extend %flex;
-    background: #919191;
-    font-family: poppins;
+    font-family: 'Poppins', sans-serif;
 }
 
 ::placeholder {
-    color: white;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--fontColor);
+    font-weight: 200;
+    font-size: clamp(0.85, 3vw, 1.25rem);
 }
 
 .bg {
@@ -59,7 +68,7 @@ body {
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: rgba(black, 0.4);
+        background: rgba(black, 0.3);
     }
 }
 
@@ -68,10 +77,10 @@ main {
     width: 40vw;
     height: 80vh;
     border-radius: 35px;
-    background: rgb(0, 0, 0);
+    background: var(--mainBg);
     opacity: 0.8;
     border: 2px solid #fff;
-    box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 10px 5px rgba(80, 80, 80, 0.7);
     form {
         width: 100%;
         height: 100%;
@@ -84,13 +93,16 @@ main {
             @extend %flex;
             h2 {
                 font-size: clamp(1.5rem, 4vw, 2rem);
-                color: white;
+                color: var(--fontColor);
             }
         }
         .pageContainer {
+            //?width is dependent on no of pages
+            //?Total width = width of page1+page2+............
+            //?Therefore total width=numOfPages*100%
             min-width: calc(100%*var(--numOfPages));
             height: 75%;
-            transition: all 0.7s ease;
+            transition: all var(--pageTransitionTime) ease;
             display: flex;
             justify-content: center;
             .page {
@@ -113,30 +125,30 @@ main {
                         label,
                         input {
                             font-size: clamp(1rem, 3vw, 1.5rem);
-                            color: white;
+                            color: var(--fontColor);
                         }
                         input,
                         textarea {
-                            color: rgb(236, 236, 236);
+                            font-family: 'Montserrat', sans-serif;
+                            color: var(--fontColor);
                             font-size: clamp(0.85, 3vw, 1.35rem);
-                            padding: 0.8rem 0.5rem;
+                            font-weight: 200;
+                            border-radius: 10px;
+                            padding: 0.8rem 0.6rem;
                             width: 100%;
                             outline: none;
-                            background: rgba(white, 0.3);
+                            background: var(--inputBg) !important;
                             border: none;
-                            border-bottom: 2px solid white;
-                            border-radius: 10px;
-                            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+                            border-bottom: var(--inputBorder);
+                            box-shadow: var(--shadow);
                         }
                     }
                 }
             }
         }
         .btnContainer {
-            width: 80%;
+            width: 100%;
             height: 10%;
-            @extend %centerHorizontaly;
-            bottom: 0;
             @extend %flex;
             justify-content: space-evenly;
             align-items: flex-start;
@@ -145,11 +157,11 @@ main {
                 height: 66.66%;
                 border-radius: 20px;
                 font-size: clamp(0.8rem, 2vw, 1rem);
-                background: rgba(rgb(77, 190, 255), 0.9);
+                background: var(--buttonColor);
                 outline: 0;
                 border: 0;
                 cursor: pointer;
-                box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+                box-shadow: var(--shadow);
             }
             #previous_button,
             #submit_button {

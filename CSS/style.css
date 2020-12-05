@@ -1,9 +1,9 @@
 :root {
   --numOfPages: 6;
   --pageTransitionTime: 0.5s;
-  --fontColor: rgb(0, 0, 0);
+  --fontColor: white;
   --shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
-  --mainBg: rgb(246, 255, 115);
+  --mainBg: rgb(34, 34, 34);
   --inputBg: rgba(255, 255, 255, 0.3);
   --inputBorder: 2px solid rgb(255, 230, 87);
   --buttonColor: rgba(77, 190, 255, 0.9);
@@ -99,9 +99,9 @@ main {
   border-radius: 35px;
   background: var(--mainBg);
   opacity: 0.8;
-  border: 2px solid #fff;
-  -webkit-box-shadow: 5px 5px 10px 5px rgba(80, 80, 80, 0.7);
-          box-shadow: 5px 5px 10px 5px rgba(80, 80, 80, 0.7);
+  border: 2px solid #ffeb77;
+  -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.7);
+          box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.7);
 }
 
 main form {

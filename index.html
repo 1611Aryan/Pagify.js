@@ -5,10 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="./CSS/responsive.css">
 </head>
 
 <body>
+    <div class="bg">
+        <picture>
+            <source srcset="Media/pexels-olenka-sergienko-5345033.jpg" type="image/jpg">
+            <img src="Media/pexels-olenka-sergienko-5345033.jpg">
+        </picture>
+    </div>
     <main>
 
         <form>
@@ -18,15 +25,16 @@
             </div>
 
             <div class="pageContainer" id="pageContainer">
+
                 <div class="page">
                     <div class="formChild">
                         <div class="inputContainer">
                             <label for="name">Your Name:</label>
-                            <input name="name" id="name" type="text" placeholder="He who must not be named">
+                            <input name="name" id="name" type="text" placeholder="Karan Aujla">
                         </div>
                         <div class="inputContainer">
                             <label for="stream">Your Stream:</label>
-                            <input name="stream" id="stream" type="text" placeholder="Defence Against Dark Arts">
+                            <input name="stream" id="stream" type="text" placeholder="Geetan Di Machine">
                         </div>
                         <div class="inputContainer">
                             <label for="rollNumber">Your Roll No.</label>
@@ -70,6 +78,15 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="page">
+                    <div class="formChild">
+                        <div class="inputContainer">
+                            <label for="ques5">Question 5</label>
+                            <textarea name="ques5" id="ques5" rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="btnContainer">
                 <button id="previous_button">Previous</button>
@@ -80,7 +97,11 @@
         </form>
     </main>
 
-    <script src="app.js"></script>
+    <script src="./JS/app.js"></script>
 </body>
+
+</html>
+
+</html>
 
 </html>

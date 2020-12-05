@@ -1,0 +1,160 @@
+:root {
+    --numOfPages: 6;
+}
+
+%flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%centerHorizontaly {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+%img {
+    width: 100%;
+    height: 100%;
+    @extend %flex;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    @extend %flex;
+    background: #919191;
+    font-family: poppins;
+}
+
+::placeholder {
+    color: white;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    picture {
+        @extend %img;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(black, 0.4);
+    }
+}
+
+main {
+    z-index: 2;
+    width: 40vw;
+    height: 80vh;
+    border-radius: 35px;
+    background: rgb(0, 0, 0);
+    opacity: 0.8;
+    border: 2px solid #fff;
+    box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.5);
+    form {
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        overflow: hidden;
+        position: relative;
+        .heading {
+            width: 100%;
+            height: 10%;
+            @extend %flex;
+            h2 {
+                font-size: clamp(1.5rem, 4vw, 2rem);
+                color: white;
+            }
+        }
+        .pageContainer {
+            min-width: calc(100%*var(--numOfPages));
+            height: 75%;
+            transition: all 0.7s ease;
+            display: flex;
+            justify-content: center;
+            .page {
+                min-width: calc(100%/var(--numOfPages));
+                height: 100%;
+                @extend %flex;
+                flex-direction: column;
+                .formChild {
+                    width: 80%;
+                    height: 100%;
+                    @extend %flex;
+                    justify-content: space-evenly;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    .inputContainer {
+                        width: 100%;
+                        @extend %flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        label,
+                        input {
+                            font-size: clamp(1rem, 3vw, 1.5rem);
+                            color: white;
+                        }
+                        input,
+                        textarea {
+                            color: rgb(236, 236, 236);
+                            font-size: clamp(0.85, 3vw, 1.35rem);
+                            padding: 0.8rem 0.5rem;
+                            width: 100%;
+                            outline: none;
+                            background: rgba(white, 0.3);
+                            border: none;
+                            border-bottom: 2px solid white;
+                            border-radius: 10px;
+                            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+                        }
+                    }
+                }
+            }
+        }
+        .btnContainer {
+            width: 80%;
+            height: 10%;
+            @extend %centerHorizontaly;
+            bottom: 0;
+            @extend %flex;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            button {
+                width: 25%;
+                height: 66.66%;
+                border-radius: 20px;
+                font-size: clamp(0.8rem, 2vw, 1rem);
+                background: rgba(rgb(77, 190, 255), 0.9);
+                outline: 0;
+                border: 0;
+                cursor: pointer;
+                box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+            }
+            #previous_button,
+            #submit_button {
+                display: none;
+            }
+        }
+    }
+}

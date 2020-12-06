@@ -1,12 +1,12 @@
 :root {
-  --numOfPages: 6;
-  --pageTransitionTime: 0.5s;
+  --overlay: rgba(0, 0, 0, 0.4);
   --fontColor: white;
   --shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
   --mainBg: rgb(34, 34, 34);
   --inputBg: rgba(255, 255, 255, 0.3);
   --inputBorder: 2px solid rgb(255, 230, 87);
-  --buttonColor: rgba(77, 190, 255, 0.9);
+  --buttonBg: rgba(77, 190, 255, 0.8);
+  --buttonHoverBg: rgba(131, 131, 131, 0.9);
 }
 
 .bg picture, body, main form .heading, main form .pageContainer .page, main form .pageContainer .page .formChild, main form .pageContainer .page .formChild .inputContainer, main form .btnContainer {
@@ -89,10 +89,11 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--overlay);
 }
 
 main {
+  position: relative;
   z-index: 2;
   width: 40vw;
   height: 80vh;
@@ -125,8 +126,8 @@ main form .heading h2 {
 main form .pageContainer {
   min-width: calc(100%*var(--numOfPages));
   height: 75%;
-  -webkit-transition: all var(--pageTransitionTime) ease;
-  transition: all var(--pageTransitionTime) ease;
+  -webkit-transition: all var(--pageTransitionTime) var(--pageTransitionCurve);
+  transition: all var(--pageTransitionTime) var(--pageTransitionCurve);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -186,11 +187,23 @@ main form .pageContainer .page .formChild .inputContainer textarea {
   padding: 0.8rem 0.6rem;
   width: 100%;
   outline: none;
-  background: var(--inputBg) !important;
+  background: var(--inputBg);
   border: none;
   border-bottom: var(--inputBorder);
   -webkit-box-shadow: var(--shadow);
           box-shadow: var(--shadow);
+  -webkit-transition: background ease 0.3s;
+  transition: background ease 0.3s;
+}
+
+main form .pageContainer .page .formChild .inputContainer input:hover, main form .pageContainer .page .formChild .inputContainer input:focus,
+main form .pageContainer .page .formChild .inputContainer textarea:hover,
+main form .pageContainer .page .formChild .inputContainer textarea:focus {
+  background: rgba(212, 212, 212, 0.3);
+}
+
+main form .pageContainer .page .formChild .inputContainer textarea {
+  resize: vertical;
 }
 
 main form .btnContainer {
@@ -207,14 +220,21 @@ main form .btnContainer {
 main form .btnContainer button {
   width: 25%;
   height: 66.66%;
-  border-radius: 20px;
-  font-size: clamp(0.8rem, 2vw, 1rem);
-  background: var(--buttonColor);
+  border-radius: 17.5px;
+  font-size: clamp(0.8rem, 2vw, 1.15rem);
+  background: var(--buttonBg);
   outline: 0;
   border: 0;
   cursor: pointer;
   -webkit-box-shadow: var(--shadow);
           box-shadow: var(--shadow);
+  -webkit-transition: color ease 0.2s, background ease 0.2s;
+  transition: color ease 0.2s, background ease 0.2s;
+}
+
+main form .btnContainer button:hover {
+  background: var(--buttonHoverBg);
+  color: var(--buttonBg);
 }
 
 main form .btnContainer #previous_button,

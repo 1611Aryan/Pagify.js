@@ -87,9 +87,9 @@ Use the snappy function and moving between pages hasn't been any faster!!
 There are two types of people:
 
 - People who almost always forget to fill atleast one form input.
-- Abnormal people.
+- Psychopaths.
 
-For all the normal people we have the inputCheck function:
+For all the normal people out there we have the inputCheck function:
 
 > ```JAVASCRIPT
 > Pagify.inputCheck();

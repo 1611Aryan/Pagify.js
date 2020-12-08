@@ -7,7 +7,7 @@ Pagify will transform your forms to a multi page format with just a few extra li
 ###### NPM SETUP
 
 > ```BASH
-> Soon
+> Coming to a script near you very soon!!!
 > ```
 
 ###### HTML SETUP

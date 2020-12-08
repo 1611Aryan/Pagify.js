@@ -70,7 +70,7 @@ Don't worry we have some more tricks up our sleeve
 - [Snappy](https://github.com/1611Aryan/modularForm.github.io/tree/master#snappy)
 - [Input Check](https://github.com/1611Aryan/modularForm.github.io/tree/master#input-check)
 
-##### Snappy
+#### Snappy
 
 Not a fan of page transititions?
 Use the snappy function and moving between pages hasn't been any faster!!
@@ -79,7 +79,7 @@ Use the snappy function and moving between pages hasn't been any faster!!
 > Pagify.snappy().init();
 > ```
 
-##### Input Check
+#### Input Check
 
 There are two types of people:
 

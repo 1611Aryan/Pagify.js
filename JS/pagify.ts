@@ -124,7 +124,6 @@ class pagify {
         //TODO Make the code faster rn it is O(N^2)
         //TODO Along with alert give option of displaying an error message instead ✔✔
         this.submit.addEventListener('click', (e) => {
-            e.preventDefault();
             this.inputEmptyCounter = 1;
             this.textAreaEmptyCounter = 1;
             //?Selects all the pages

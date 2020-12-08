@@ -47,6 +47,7 @@ It is super easy to get pagify up and performing wonders
 > ```
 
 Yupp that was it.
+
 Your form has now successfully been ✨Pagified✨
 
 ---
@@ -65,6 +66,7 @@ Pass an object defining the duration and curve of transitions as argument of the
 ### Extra Features!!!
 
 Not satisfied yet?
+
 Don't worry we have some more tricks up our sleeve
 
 - [Snappy](https://github.com/1611Aryan/modularForm.github.io/tree/master#snappy)

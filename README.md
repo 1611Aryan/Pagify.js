@@ -1,7 +1,10 @@
 # Pagify.JS
 
-To get started with using pagify.js
-First add the cdn to js and css file
+Pagify will let you transform your forms to a multi page format with just a few extra lines of code.
+
+## Getting Started
+
+###### HTML SETUP
 
 > ```HTML
 > <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/1611Aryan/modularForm.github.io/CSS/pagify.css">
@@ -10,23 +13,61 @@ First add the cdn to js and css file
 
 ---
 
-#### Now initialize Pagify.js by
+#### Setup
+
+It's super easy to get pagify up and performing wonders
+
+> ```HTML
+> <form>
+>   <div class="pageContainer">
+>       <div class="page">
+>           ...
+>       </div>
+>       <div class="page">
+>           ...
+>       </div>
+>   </div>
+> <div class="btnContainer">
+>   <button id="previous_button">Previous</button>
+>   <button id="next_button">Next</button>
+>   <button id="submit_button">Submit</button>
+> </div>
+> </form>
+> ```
 
 > ```JAVASCRIPT
 > const Pagify = new pagify();
 > Pagify.init();
 > ```
 
+Yupp that was it.
+Your form has now successfully been ✨Pagified✨
+
 ---
 
-### Extra Features
+### Tweaking the transitions
+
+To speed up or change the transition curve of the page transitions
+Pass an object defining the duration and curve of transitions as argument of the init function
+
+> ```JAVASCRIPT
+> Pagify.init({time:"1s",curve:"ease-out"});
+> ```
+
+---
+
+### Extra Features!!!
+
+Not satisfied yet?
+Don't worry we have some more tricks up our sleeve
 
 - [Snappy](https://github.com/1611Aryan/modularForm.github.io/tree/master#snappy)
 - [Input Check](https://github.com/1611Aryan/modularForm.github.io/tree/master#input-check)
 
 ##### Snappy
 
-To remove all the transitions from the pages use
+Not a fan of page transititions?
+Use the snappy function and moving between pages hasn't been any faster
 
 > ```JAVASCRIPT
 > Pagify.snappy().init();
@@ -34,7 +75,12 @@ To remove all the transitions from the pages use
 
 ##### Input Check
 
-To check if any input was left empty on a page and traverse back to that page
+There are two types of people:
+
+- People who almost always forget to fill atleast one form input.
+- Abnormal people.
+
+For all the normal people we have the inputCheck function:
 
 > ```JAVASCRIPT
 > Pagify.inputCheck();

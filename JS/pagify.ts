@@ -19,9 +19,7 @@ class pagify {
     inputEmptyCounter: number
     textAreaEmptyCounter: number
 
-    constructor({ time = '0.5s', curve = 'ease' } = {}) {
-        this.time = time;
-        this.curve = curve;
+    constructor() {
         this.prev = (<HTMLElement>document.querySelector('#previous_button'));
         this.next = (<HTMLElement>document.querySelector('#next_button'));
         this.submit = (<HTMLElement>document.querySelector('#submit_button'));
@@ -31,17 +29,18 @@ class pagify {
         this.root = document.documentElement;
         this.root.style.setProperty('--numOfPages', this.noOfPage.toString());
         //?
-        //?Sets the transition time (which is an optional parameter) in css variables
+        this.posCounter = 0;
+        this.movePageBy = (<HTMLElement>document.querySelector('.pageContainer')).offsetWidth;
+    }
+    //?Voila Magic
+    init = ({ time = '0.5s', curve = 'ease' } = {}) => {
+        this.time = time;
+        this.curve = curve;
         this.root.style.setProperty('--pageTransitionTime', this.time);
         //?
         //?Sets the transition curve (which is an optional parameter) in css variables
         this.root.style.setProperty('--pageTransitionCurve', this.curve);
         //?
-        this.posCounter = 0;
-        this.movePageBy = (<HTMLElement>document.querySelector('.pageContainer')).offsetWidth;
-    }
-    //?Voila Magic
-    init = () => {
         this.prev.addEventListener('click', e => {
             e.preventDefault();
             this.posCounter--;

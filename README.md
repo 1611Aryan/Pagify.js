@@ -21,7 +21,7 @@ Pagify will transform your forms to a multi page format with just a few extra li
 
 #### Setup
 
-It's super easy to get pagify up and performing wonders
+It is super easy to get pagify up and performing wonders
 
 > ```HTML
 > <form>
@@ -54,7 +54,7 @@ Your form has now successfully been ✨Pagified✨
 ### Tweaking the transitions
 
 To speed up or change the transition curve of the page transitions
-Pass an object defining the duration and curve of transitions as argument of the init function
+Pass an object defining the duration and curve of transitions as argument of the init function.
 
 > ```JAVASCRIPT
 > Pagify.init({time:"1s",curve:"ease-out"});
@@ -73,7 +73,7 @@ Don't worry we have some more tricks up our sleeve
 ##### Snappy
 
 Not a fan of page transititions?
-Use the snappy function and moving between pages hasn't been any faster
+Use the snappy function and moving between pages hasn't been any faster!!
 
 > ```JAVASCRIPT
 > Pagify.snappy().init();
@@ -92,14 +92,14 @@ For all the normal people we have the inputCheck function:
 > Pagify.inputCheck();
 > ```
 
-By default 'Please complete the Form' alert message will be displayed
-To change the message pass your desired message as an argument
+By default 'Please complete the Form' alert message will be displayed.
+To change the message pass your desired message as an argument.
 
 > ```JAVASCRIPT
 > Pagify.inputCheck({},'Your Message');
 > ```
 
-To display your message in a HTML element on the empty page
+To display your message in a HTML element on the empty page:
 
 > ```JAVASCRIPT
 > //To hide the alert use displayAlert:0

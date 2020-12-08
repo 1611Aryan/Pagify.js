@@ -86,8 +86,8 @@ Use the snappy function and moving between pages hasn't been any faster!!
 
 There are two types of people:
 
-- People who almost always forget to fill atleast one form input.
-- Psychopaths.
+- People who almost always forget to fill atleast one form input
+- Psychopaths
 
 For all the normal people out there we have the inputCheck function:
 

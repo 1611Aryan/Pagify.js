@@ -19,7 +19,7 @@ First add the cdn to js and css file
 
 ---
 
-###Extra Features
+### Extra Features
 
 - Snappy
 - Input Check

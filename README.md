@@ -73,6 +73,7 @@ Don't worry we have some more tricks up our sleeve
 #### Snappy
 
 Not a fan of page transititions?
+
 Use the snappy function and moving between pages hasn't been any faster!!
 
 > ```JAVASCRIPT

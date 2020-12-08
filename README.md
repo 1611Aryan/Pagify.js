@@ -1,8 +1,14 @@
 # Pagify.JS
 
-Pagify will let you transform your forms to a multi page format with just a few extra lines of code.
+Pagify will transform your forms to a multi page format with just a few extra lines of code.
 
 ## Getting Started
+
+###### NPM SETUP
+
+> ```BASH
+> Soon
+> ```
 
 ###### HTML SETUP
 

@@ -1,0 +1,17 @@
+.pageContainer {
+  min-width: calc(100%*var(--numOfPages));
+  -webkit-transition: all var(--pageTransitionTime) var(--pageTransitionCurve);
+  transition: all var(--pageTransitionTime) var(--pageTransitionCurve);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pageContainer .page {
+  min-width: calc(100%/var(--numOfPages));
+  height: 100%;
+}
+/*# sourceMappingURL=pagify.css.map */

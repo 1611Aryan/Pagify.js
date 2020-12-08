@@ -9,7 +9,7 @@
   --buttonHoverBg: rgba(131, 131, 131, 0.9);
 }
 
-.bg picture, body, main form .heading, main form .pageContainer .page, main form .pageContainer .page .formChild, main form .pageContainer .page .formChild .inputContainer, main form .btnContainer {
+.bg picture, body, main form .heading, main form .userPageContainer .userPage, main form .userPageContainer .userPage .formChild, main form .userPageContainer .userPage .formChild .inputContainer, main form .btnContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -123,29 +123,18 @@ main form .heading h2 {
   color: var(--fontColor);
 }
 
-main form .pageContainer {
-  min-width: calc(100%*var(--numOfPages));
+main form .userPageContainer {
   height: 75%;
-  -webkit-transition: all var(--pageTransitionTime) var(--pageTransitionCurve);
-  transition: all var(--pageTransitionTime) var(--pageTransitionCurve);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
-main form .pageContainer .page {
-  min-width: calc(100%/var(--numOfPages));
-  height: 100%;
+main form .userPageContainer .userPage {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
-main form .pageContainer .page .formChild {
+main form .userPageContainer .userPage .formChild {
   width: 80%;
   height: 100%;
   -webkit-box-pack: space-evenly;
@@ -160,7 +149,7 @@ main form .pageContainer .page .formChild {
           flex-direction: column;
 }
 
-main form .pageContainer .page .formChild .inputContainer {
+main form .userPageContainer .userPage .formChild .inputContainer {
   width: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -171,14 +160,14 @@ main form .pageContainer .page .formChild .inputContainer {
           align-items: flex-start;
 }
 
-main form .pageContainer .page .formChild .inputContainer label,
-main form .pageContainer .page .formChild .inputContainer input {
+main form .userPageContainer .userPage .formChild .inputContainer label,
+main form .userPageContainer .userPage .formChild .inputContainer input {
   font-size: clamp(1rem, 3vw, 1.5rem);
   color: var(--fontColor);
 }
 
-main form .pageContainer .page .formChild .inputContainer input,
-main form .pageContainer .page .formChild .inputContainer textarea {
+main form .userPageContainer .userPage .formChild .inputContainer input,
+main form .userPageContainer .userPage .formChild .inputContainer textarea {
   font-family: 'Montserrat', sans-serif;
   color: var(--fontColor);
   font-size: clamp(0.85, 3vw, 1.35rem);
@@ -196,13 +185,13 @@ main form .pageContainer .page .formChild .inputContainer textarea {
   transition: background ease 0.3s;
 }
 
-main form .pageContainer .page .formChild .inputContainer input:hover, main form .pageContainer .page .formChild .inputContainer input:focus,
-main form .pageContainer .page .formChild .inputContainer textarea:hover,
-main form .pageContainer .page .formChild .inputContainer textarea:focus {
+main form .userPageContainer .userPage .formChild .inputContainer input:hover, main form .userPageContainer .userPage .formChild .inputContainer input:focus,
+main form .userPageContainer .userPage .formChild .inputContainer textarea:hover,
+main form .userPageContainer .userPage .formChild .inputContainer textarea:focus {
   background: rgba(212, 212, 212, 0.3);
 }
 
-main form .pageContainer .page .formChild .inputContainer textarea {
+main form .userPageContainer .userPage .formChild .inputContainer textarea {
   resize: vertical;
 }
 

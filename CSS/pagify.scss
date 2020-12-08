@@ -1,0 +1,13 @@
+.pageContainer {
+    //?width is dependent on no of pages
+    //?Total width = width of page1+page2+............
+    //?Therefore total width=numOfPages*100%
+    min-width: calc(100%*var(--numOfPages));
+    transition: all var(--pageTransitionTime) var(--pageTransitionCurve);
+    display: flex;
+    justify-content: center;
+    .page {
+        min-width: calc(100%/var(--numOfPages));
+        height: 100%;
+    }
+}

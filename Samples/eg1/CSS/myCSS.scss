@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: #256;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 40vw;
+    height: 80vh;
+    background: rgba(white, 0.7);
+    overflow: hidden;
+}

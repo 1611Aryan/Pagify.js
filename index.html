@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./CSS/pagify.css">
     <link rel="stylesheet" type="text/css" href="./CSS/style.css">
     <link rel="stylesheet" type="text/css" href="./CSS/responsive.css">
 </head>
@@ -27,9 +28,9 @@
                 <h2>Form Heading</h2>
             </div>
 
-            <div class="pageContainer" id="pageContainer">
+            <div class="pageContainer userPageContainer">
 
-                <div class="page">
+                <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
                             <label for="name">Your Name:</label>
@@ -46,7 +47,7 @@
                     </div>
                 </div>
                 <!--*Page 1-->
-                <div class="page">
+                <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
                             <label for="ques1"> Question 1</label>
@@ -55,7 +56,7 @@
                     </div>
                 </div>
                 <!--*Page 2-->
-                <div class="page">
+                <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
                             <label for="ques2">Question 2</label>
@@ -64,7 +65,7 @@
                     </div>
                 </div>
                 <!--*Page 3-->
-                <div class="page">
+                <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
                             <label for="ques3">Question 3</label>
@@ -73,7 +74,7 @@
                     </div>
                 </div>
                 <!--*Page 4-->
-                <div class="page">
+                <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
                             <label for="ques4">Question 4</label>
@@ -82,7 +83,7 @@
                     </div>
                 </div>
                 <!--*Page 5-->
-                <div class="page">
+                <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
                             <label for="ques5">Question 5</label>
@@ -91,7 +92,7 @@
                     </div>
                 </div>
                 <!--*Page 6-->
-                <div class="page">
+                <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
                             <label for="ques6">Question 6</label>
@@ -100,7 +101,7 @@
                     </div>
                 </div>
                 <!--*Page 7-->
-                <div class="page">
+                <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
                             <label for="ques7">Question 7</label>
@@ -109,7 +110,7 @@
                     </div>
                 </div>
                 <!--*Page 8-->
-                <div class="page">
+                <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
                             <label for="ques8">Question 8</label>
@@ -118,7 +119,7 @@
                     </div>
                 </div>
                 <!--*Page 9-->
-                <div class="page">
+                <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
                             <label for="ques9">Question 9</label>
@@ -127,7 +128,7 @@
                     </div>
                 </div>
                 <!--*Page 10-->
-                <div class="page">
+                <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
                             <label for="ques10">Question 10</label>
@@ -146,7 +147,17 @@
         </form>
     </main>
 
-    <script src="./JS/app.js"></script>
+    <script src="./JS/pagify.js"></script>
+    <script>
+        // const Pagify = new pagify();
+        // //*
+        // Pagify.snappy().init();
+        // //Pagify.init();
+        // Pagify.inputCheck({}, 'Htt');
+        const Pagify = new pagify();
+        Pagify.init();
+        Pagify.inputCheck({}, 'Htt');
+    </script>
 </body>
 
 </html>

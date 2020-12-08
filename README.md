@@ -1,4 +1,4 @@
-#Pagify.JS
+# Pagify.JS
 
 To get started with using pagify.js
 First add the cdn to js and css file

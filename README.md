@@ -24,14 +24,16 @@ First add the cdn to js and css file
 - Snappy
 - Input Check
 
-#####Snappy
+##### Snappy
+
 To remove all the transitions from the pages use
 
 > ```JAVASCRIPT
 > Pagify.snappy().init();
 > ```
 
-#####Input Check
+##### Input Check
+
 To check if any input was left empty on a page and traverse back to that page
 
 > ```JAVASCRIPT
@@ -50,5 +52,5 @@ To display your message in a HTML element on the empty page
 > ```JAVASCRIPT
 > //To hide the alert use displayAlert:0
 > //Message is optional
-> Pagify.inputCheck({displayAlert:1,displayMessage:1},"Message")
+> Pagify.inputCheck({displayAlert:1,displayMessage:1},"Message");
 > ```

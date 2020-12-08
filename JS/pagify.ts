@@ -136,11 +136,11 @@ class pagify {
                 this.inputs = (<Element>this.pages[i]).querySelectorAll(":scope input");
                 for (let j = 0; j < this.inputs.length; j++) {
                     if ((<HTMLInputElement>this.inputs[j]).value == '') {
-                        this.display(this.displayAlert, this.displayMessage, i, this.outputMessage);
+                        e.preventDefault();
                         this.posCounter = i;
                         this.pageChange(this.posCounter);
-                        e.preventDefault();
                         this.inputEmptyCounter = 0;
+                        this.display(this.displayAlert, this.displayMessage, i, this.outputMessage);
                         return false;
                     }
                 }
@@ -152,11 +152,11 @@ class pagify {
                         return false;
                     }
                     if ((<HTMLTextAreaElement>this.textAreas[j]).value == "") {
-                        this.display(this.displayAlert, this.displayMessage, i, this.outputMessage);
+                        e.preventDefault();
                         this.posCounter = i;
                         this.pageChange(this.posCounter);
-                        e.preventDefault();
                         this.textAreaEmptyCounter = 0;
+                        this.display(this.displayAlert, this.displayMessage, i, this.outputMessage);
                         return false;
                     }
                 }

@@ -99,11 +99,11 @@ var pagify = /** @class */ (function () {
                     _this.inputs = _this.pages[i].querySelectorAll(":scope input");
                     for (var j = 0; j < _this.inputs.length; j++) {
                         if (_this.inputs[j].value == '') {
-                            _this.display(_this.displayAlert, _this.displayMessage, i, _this.outputMessage);
+                            e.preventDefault();
                             _this.posCounter = i;
                             _this.pageChange(_this.posCounter);
-                            e.preventDefault();
                             _this.inputEmptyCounter = 0;
+                            _this.display(_this.displayAlert, _this.displayMessage, i, _this.outputMessage);
                             return false;
                         }
                     }
@@ -115,11 +115,11 @@ var pagify = /** @class */ (function () {
                             return false;
                         }
                         if (_this.textAreas[j].value == "") {
-                            _this.display(_this.displayAlert, _this.displayMessage, i, _this.outputMessage);
+                            e.preventDefault();
                             _this.posCounter = i;
                             _this.pageChange(_this.posCounter);
-                            e.preventDefault();
                             _this.textAreaEmptyCounter = 0;
+                            _this.display(_this.displayAlert, _this.displayMessage, i, _this.outputMessage);
                             return false;
                         }
                     }

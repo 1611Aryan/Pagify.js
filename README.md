@@ -93,6 +93,7 @@ For all the normal people we have the inputCheck function:
 > ```
 
 By default 'Please complete the Form' alert message will be displayed.
+
 To change the message pass your desired message as an argument.
 
 > ```JAVASCRIPT

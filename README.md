@@ -21,8 +21,8 @@ First add the cdn to js and css file
 
 ### Extra Features
 
-- Snappy
-- Input Check
+- [Snappy](https://github.com/1611Aryan/modularForm.github.io/tree/master#snappy)
+- [Input Check](https://github.com/1611Aryan/modularForm.github.io/tree/master#input-check)
 
 ##### Snappy
 

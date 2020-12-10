@@ -1,6 +1,7 @@
 # Pagify.JS
 
 Pagify will transform your forms to a multi page format with just a few extra lines of code.
+![gif](https://github.com/1611Aryan/Pagify.js/Media/excited.gif)
 
 ---
 
@@ -132,4 +133,4 @@ To display your message in a HTML element on the empty page:
 
 > [Sample1](https://1611aryan.github.io/Pagify.js/Samples/sample1/)
 >
-> ![Screenshot](https://1611aryan.github.io/Pagify.js/Samples/sample1/sample1.png)
+> ![Screenshot](https://1611aryan.github.io/Pagify.js/Media/sample1.png)

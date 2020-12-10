@@ -32,6 +32,9 @@ Pagify will transform your forms to a multi page format with just a few extra li
 > ```HTML
 > <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/1611Aryan/modularForm.github.io/CSS/pagify.css">
 > <script src="https://cdn.jsdelivr.net/gh/1611Aryan/modularForm.github.io/JS/pagify.js"></script>
+> <!--Minified CSS and Script ⤵ -->
+> <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/1611Aryan/modularForm.github.io/CSS/pagify.min.css">
+> <script src="https://cdn.jsdelivr.net/gh/1611Aryan/modularForm.github.io/JS/pagify.min.js"></script>
 > ```
 
 ---

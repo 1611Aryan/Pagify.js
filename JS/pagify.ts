@@ -15,11 +15,16 @@ class pagify {
     outputMessage: string
     pages: NodeList
     inputs: NodeList
+    radios: NodeList
+    radiosNames: string[]
+    radiosSorted: NodeList
     selects: NodeList
     textAreas: NodeList
     inputEmptyCounter: number
+    radioCheckedCounter: number
     textAreaEmptyCounter: number
     selectEmptyCounter: number
+
 
     constructor() {
         this.prev = (<HTMLElement>document.querySelector('#previous_button'));
@@ -33,6 +38,7 @@ class pagify {
         //?
         this.posCounter = 0;
         this.movePageBy = (<HTMLElement>document.querySelector('.pageContainer')).offsetWidth;
+
     }
     //?Voila Magic
 
@@ -105,9 +111,7 @@ class pagify {
     //*Extra Functions
 
     //?Outputs the passed message to the passed pageNumber 
-
     //?Message can be displayed in form of alert and innerHTML of an element with class ".pagifyMessage"
-
     display = (displayAlert: number, displayMessage: number, pageNumber: number, message: string) => {
         if (displayAlert === 1) {
             window.alert(message);
@@ -119,10 +123,14 @@ class pagify {
         }
     }
 
-    //?
+    //?This function prevents the form from submitting displays the error message and changes the page's location
+    whateverItTakes = (i: number) => {
+        this.posCounter = i;
+        this.pageChange(this.posCounter);
+        this.display(this.displayAlert, this.displayMessage, i, this.outputMessage);
+    }
 
     //?Removes the transition
-
     snappy = () => {
         this.time = '0s';
         this.root.style.setProperty('--pageTransitionTime', this.time);
@@ -130,12 +138,9 @@ class pagify {
         return this;
     }
 
-    //?
 
     //?Checks if any form element is empty or not selected
-
     inputCheck = ({ displayAlert = 1, displayMessage = 0 } = {}, message = "Please complete the Form") => {
-
         this.displayAlert = displayAlert;
         this.displayMessage = displayMessage;
         this.outputMessage = message;
@@ -143,7 +148,6 @@ class pagify {
         //TODO Make the code faster rn it is O(N^2)
         //TODO Along with alert give option of displaying an error message instead ✔✔
         this.submit.addEventListener('click', (e) => {
-            e.preventDefault();
             this.inputEmptyCounter = 1;
             this.textAreaEmptyCounter = 1;
             this.selectEmptyCounter = 1;
@@ -151,67 +155,87 @@ class pagify {
             this.pages = document.querySelectorAll('.page');
             for (let i = 0; i < this.pages.length; i++) {
                 //?Loops through all the pages
-
                 //?Finds any input  or textarea and if it is empty returns to that page and alerts an error message
-
                 //*Selects all inputs
-
                 this.inputs = (<Element>this.pages[i]).querySelectorAll(':scope input:not([type="reset"]):not([type="submit"]):not([type="radio"]):not([type="checkbox"])');
                 for (let j = 0; j < this.inputs.length; j++) {
                     if ((<HTMLInputElement>this.inputs[j]).value == '') {
                         e.preventDefault();
-                        this.posCounter = i;
-                        this.pageChange(this.posCounter);
                         this.inputEmptyCounter = 0;
-                        this.display(this.displayAlert, this.displayMessage, i, this.outputMessage);
+                        this.whateverItTakes(i);
                         return false;
                     }
                 }
-
+                ////////////////////////////////////*
+                //*Selects all radios
+                //*Warning complicated code ahead
+                //?First it finds all the radios on the page being looped through
+                this.radios = (<Element>this.pages[i]).querySelectorAll(':scope input[type="radio"]');
+                //?Next it finds all the name of radios and removes the duplicates
+                this.radiosNames = [];
+                this.radioCheckedCounter = 0;
+                for (let j = 0; j < this.radios.length; j++) {
+                    this.radiosNames.push((<Element>this.radios[j]).getAttribute('name'));
+                    this.radiosNames = [... new Set(this.radiosNames)];
+                }
+                //?Now we loop through all the names on that page and for each page check if any radio is true and for each unchecked radio the radiochecked counter is incremented and if it becomes equal to length of radios by that name it means all radios were false so it returns out of the loop
+                for (let j = 0; j < this.radiosNames.length; j++) {
+                    this.radioCheckedCounter = 0;
+                    this.radiosSorted = (<Element>this.pages[i]).querySelectorAll(`:scope  input[name="${this.radiosNames[j]}"]`);
+                    for (let k = 0; k < this.radiosSorted.length; k++) {
+                        if ((<HTMLInputElement>this.radiosSorted[k]).checked === true) {
+                            this.radioCheckedCounter = 0;
+                            break;
+                        }
+                        else {
+                            this.radioCheckedCounter++;
+                        }
+                    }
+                    if (this.radioCheckedCounter === this.radiosSorted.length) {
+                        e.preventDefault();
+                        this.radioCheckedCounter = 1;
+                        this.whateverItTakes(i)
+                        return false;
+                    }
+                }
+                ////////////////////////////////////*
                 //*Selects all TextAreas
-
                 this.textAreas = (<Element>this.pages[i]).querySelectorAll(":scope textarea");
                 for (let j = 0; j < this.textAreas.length; j++) {
                     //?Checks if any input on the same page is already identified to be empty
-                    if (this.inputEmptyCounter == 0) {
+                    if (this.inputEmptyCounter == 0 || this.radioCheckedCounter == 1) {
                         return false;
                     }
                     if ((<HTMLTextAreaElement>this.textAreas[j]).value == "") {
                         e.preventDefault();
-                        this.posCounter = i;
-                        this.pageChange(this.posCounter);
                         this.textAreaEmptyCounter = 0;
-                        this.display(this.displayAlert, this.displayMessage, i, this.outputMessage);
+                        this.whateverItTakes(i);
                         return false;
                     }
                 }
-
+                ////////////////////////////////////*
                 //*Selects all selectOptions
-
                 this.selects = (<Element>this.pages[i]).querySelectorAll(":scope select");
                 for (let j = 0; j < this.selects.length; j++) {
+                    if (this.inputEmptyCounter == 0 || this.textAreaEmptyCounter == 0 || this.radioCheckedCounter == 1) {
+                        return false;
+                    }
                     if ((<HTMLSelectElement>this.selects[j]).options[(<HTMLSelectElement>this.selects[j]).selectedIndex].text === "Please Select an Option") {
-                        if (this.inputEmptyCounter == 0 || this.textAreaEmptyCounter == 0) {
-                            return false;
-                        }
                         e.preventDefault();
-                        this.posCounter = i;
-                        this.pageChange(this.posCounter);
                         this.selectEmptyCounter = 0;
-                        this.display(this.displayAlert, this.displayMessage, i, this.outputMessage);
+                        this.whateverItTakes(i)
                         return false;
                     }
                 }
-
-                if (this.inputEmptyCounter == 0 || this.textAreaEmptyCounter == 0 || this.selectEmptyCounter == 0) {
+                ////////////////////////////////////*
+                if (this.inputEmptyCounter == 0 || this.textAreaEmptyCounter == 0 || this.selectEmptyCounter == 0 || this.radioCheckedCounter == 1) {
+                    e.preventDefault();
                     return false;
                 }
             }
         })
     }
-
     //?
-
     //*
 }
 

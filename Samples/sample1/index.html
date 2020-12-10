@@ -21,13 +21,10 @@
         </picture>
     </div>
     <main>
-
         <form>
-
             <div class="heading">
                 <h2>Form Heading</h2>
             </div>
-
             <div class="pageContainer userPageContainer">
                 <!--*Page 1-->
                 <!--*Input Tags-->
@@ -78,12 +75,16 @@
                 <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
-                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                            <label for="vehicle1"> I have a bike</label><br>
-                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                            <label for="vehicle2"> I have a car</label><br>
-                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                            <label for="vehicle3"> I have a boat</label>
+                            <input type="radio" name="GFG" id="GFG" value="GeeksforGeeks">GeeksforGeeks<br>
+
+                            <input type="radio" name="GFG" id="HTML" value="HTML">HTML<br>
+
+                            <input type="radio" name="GFG" id="JS" value="JavaScript">JavaScript<br><br> /////
+                            <input type="radio" name="GFGs" id="GFGs" value="GeeksforGeeks">GeeksforGeeks<br>
+
+                            <input type="radio" name="GFGs" id="HTMLs" value="HTML">HTML<br>
+
+                            <input type="radio" name="GFGs" id="JSs" value="JavaScript">JavaScript<br><br>
 
 
                             <!-- <label for="ques3">Question 3</label>
@@ -168,15 +169,15 @@
                 <button id="next_button">Next</button>
                 <button id="submit_button">Submit</button>
             </div>
-
         </form>
     </main>
 
     <script src="https://cdn.jsdelivr.net/gh/1611Aryan/modularForm.github.io/JS/pagify.min.js"></script>
+    <!-- <script src="../../JS/pagify.js"></script> -->
     <script>
         const Pagify = new pagify();
         Pagify.snappy().init({});
-        Pagify.inputCheck({}, 'Htt');
+        Pagify.inputCheck();
     </script>
 </body>
 

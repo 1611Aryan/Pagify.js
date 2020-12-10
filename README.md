@@ -131,6 +131,36 @@ To display your message in a HTML element on the empty page:
 > Pagify.inputCheck({displayAlert:1,displayMessage:1},"Message");
 > ```
 
+###### Supported Elements
+
+Currently _inputCheck_ supports:
+
+- > ```JAVASCRIPT
+  > <textarea name="pagify" ></textarea>
+  > ```
+
+- > ```JAVASCRIPT
+  > <select  name="pagify">
+  > <option value="default">Please Select an Option</option>
+  > <option value="option1">Option 1</option>
+  > <option value="option2">Option 2</option>
+  > <option value="option3">Option 3</option>
+  > <option value="option3">Option 4</option>
+  > </select>
+  > ```
+
+* > ```JAVASCRIPT
+  > <!--Any Input which require you to type/email/password/tel..-->
+  > <input name="pagify"  type="text" placeholder="Supported">
+  > ```
+
+* > ```JAVASCRIPT
+  > <input name="pagify"  type="radio" placeholder="Supported">
+  > ```
+* > ```JAVASCRIPT
+  > console.log('More Coming Soon')
+  > ```
+
 ---
 
 ## Samples
@@ -138,3 +168,11 @@ To display your message in a HTML element on the empty page:
 > [Sample1](https://1611aryan.github.io/Pagify.js/Samples/sample1/)
 >
 > ![Screenshot](https://1611aryan.github.io/Pagify.js/Media/sample1.png)
+
+```
+
+```
+
+```
+
+```

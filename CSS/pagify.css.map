@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,cAAc,CAAC;EAIX,SAAS,EAAE,4BAA4B;EACvC,UAAU,EAAE,GAAG,CAAC,yBAAyB,CAAC,0BAA0B;EACpE,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;CAK1B;;AAZD,AAQI,cARU,CAQV,KAAK,CAAC;EACF,SAAS,EAAE,4BAA4B;EACvC,MAAM,EAAE,IAAI;CACf",
-    "sources": [
-        "pagify.scss"
-    ],
-    "names": [],
-    "file": "pagify.css"
-}

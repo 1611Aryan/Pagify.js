@@ -131,7 +131,7 @@ To display your message in a HTML element on the empty page:
 > Pagify.inputCheck({displayAlert:1,displayMessage:1},"Message");
 > ```
 
-###### Supported Elements
+#### Supported Elements
 
 Currently _inputCheck_ supports:
 

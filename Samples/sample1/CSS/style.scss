@@ -120,7 +120,8 @@ main {
                             color: var(--fontColor);
                         }
                         input,
-                        textarea {
+                        textarea,
+                        select {
                             font-family: 'Montserrat', sans-serif;
                             color: var(--fontColor);
                             font-size: clamp(0.85, 3vw, 1.35rem);
@@ -141,6 +142,10 @@ main {
                         }
                         textarea {
                             resize: vertical;
+                        }
+                        option {
+                            background: #3a3a3a;
+                            color: rgb(255, 230, 87);
                         }
                     }
                 }

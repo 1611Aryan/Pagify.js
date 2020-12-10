@@ -94,15 +94,17 @@ var pagify = /** @class */ (function () {
             //TODO Make the code faster rn it is O(N^2)
             //TODO Along with alert give option of displaying an error message instead ✔✔
             _this.submit.addEventListener('click', function (e) {
+                e.preventDefault();
                 _this.inputEmptyCounter = 1;
                 _this.textAreaEmptyCounter = 1;
+                _this.selectEmptyCounter = 1;
                 //?Selects all the pages
                 _this.pages = document.querySelectorAll('.page');
                 for (var i = 0; i < _this.pages.length; i++) {
                     //?Loops through all the pages
                     //?Finds any input  or textarea and if it is empty returns to that page and alerts an error message
                     //*Selects all inputs
-                    _this.inputs = _this.pages[i].querySelectorAll(":scope input");
+                    _this.inputs = _this.pages[i].querySelectorAll(':scope input:not([type="reset"]):not([type="submit"]):not([type="radio"]):not([type="checkbox"])');
                     for (var j = 0; j < _this.inputs.length; j++) {
                         if (_this.inputs[j].value == '') {
                             e.preventDefault();
@@ -129,7 +131,22 @@ var pagify = /** @class */ (function () {
                             return false;
                         }
                     }
-                    if (_this.inputEmptyCounter == 0 || _this.textAreaEmptyCounter == 0) {
+                    //*Selects all selectOptions
+                    _this.selects = _this.pages[i].querySelectorAll(":scope select");
+                    for (var j = 0; j < _this.selects.length; j++) {
+                        if (_this.selects[j].options[_this.selects[j].selectedIndex].text === "Please Select an Option") {
+                            if (_this.inputEmptyCounter == 0 || _this.textAreaEmptyCounter == 0) {
+                                return false;
+                            }
+                            e.preventDefault();
+                            _this.posCounter = i;
+                            _this.pageChange(_this.posCounter);
+                            _this.selectEmptyCounter = 0;
+                            _this.display(_this.displayAlert, _this.displayMessage, i, _this.outputMessage);
+                            return false;
+                        }
+                    }
+                    if (_this.inputEmptyCounter == 0 || _this.textAreaEmptyCounter == 0 || _this.selectEmptyCounter == 0) {
                         return false;
                     }
                 }

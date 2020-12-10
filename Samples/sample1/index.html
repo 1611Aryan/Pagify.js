@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./CSS/pagify.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/1611Aryan/modularForm.github.io/CSS/pagify.css">
     <link rel="stylesheet" type="text/css" href="./CSS/style.css">
     <link rel="stylesheet" type="text/css" href="./CSS/responsive.css">
 </head>
@@ -29,7 +29,8 @@
             </div>
 
             <div class="pageContainer userPageContainer">
-
+                <!--*Page 1-->
+                <!--*Input Tags-->
                 <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
@@ -46,7 +47,8 @@
                         </div>
                     </div>
                 </div>
-                <!--*Page 1-->
+                <!--*Page 2-->
+                <!--*TextArea-->
                 <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
@@ -55,25 +57,42 @@
                         </div>
                     </div>
                 </div>
-                <!--*Page 2-->
-                <div class="page userPage">
-                    <div class="formChild">
-                        <div class="inputContainer">
-                            <label for="ques2">Question 2</label>
-                            <textarea name="ques2" id="ques2" rows="10"></textarea>
-                        </div>
-                    </div>
-                </div>
                 <!--*Page 3-->
+                <!--*Select-->
                 <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
-                            <label for="ques3">Question 3</label>
-                            <textarea name="ques3" id="ques3" rows="10"></textarea>
+                            <label for="cars">Will Logan Paul Beat Floyd Money Mayweather ?</label>
+                            <select id="cars" name="cars">
+                                <option value="default">Please Select an Option</option>
+                                <option value="volvo">Heck Yeah!</option>
+                                <option value="saab">Hell No!!</option>
+                                <option value="fiat">It's going to be draw again!!!</option>
+                                <option value="audi">Pogan Laul who??</option>
+                            </select>
                         </div>
                     </div>
                 </div>
                 <!--*Page 4-->
+                <!--*TextArea-->
+                <div class="page userPage">
+                    <div class="formChild">
+                        <div class="inputContainer">
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label for="vehicle1"> I have a bike</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label for="vehicle2"> I have a car</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label for="vehicle3"> I have a boat</label>
+
+
+                            <!-- <label for="ques3">Question 3</label>
+                            <textarea name="ques3" id="ques3" rows="10"></textarea> -->
+                        </div>
+                    </div>
+                </div>
+                <!--*Page 5-->
+                <!--*TextArea-->
                 <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
@@ -82,7 +101,8 @@
                         </div>
                     </div>
                 </div>
-                <!--*Page 5-->
+                <!--*Page 6-->
+                <!--*TextArea-->
                 <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
@@ -91,7 +111,8 @@
                         </div>
                     </div>
                 </div>
-                <!--*Page 6-->
+                <!--*Page 7-->
+                <!--*TextArea-->
                 <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
@@ -100,7 +121,8 @@
                         </div>
                     </div>
                 </div>
-                <!--*Page 7-->
+                <!--*Page 8-->
+                <!--*TextArea-->
                 <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
@@ -109,7 +131,8 @@
                         </div>
                     </div>
                 </div>
-                <!--*Page 8-->
+                <!--*Page 9-->
+                <!--*TextArea-->
                 <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
@@ -118,7 +141,8 @@
                         </div>
                     </div>
                 </div>
-                <!--*Page 9-->
+                <!--*Page 10-->
+                <!--*TextArea-->
                 <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
@@ -127,7 +151,8 @@
                         </div>
                     </div>
                 </div>
-                <!--*Page 10-->
+                <!--*Page 11-->
+                <!--*TextArea-->
                 <div class="page userPage">
                     <div class="formChild">
                         <div class="inputContainer">
@@ -147,7 +172,7 @@
         </form>
     </main>
 
-    <script src="./JS/pagify.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/1611Aryan/modularForm.github.io/JS/pagify.js"></script>
     <script>
         const Pagify = new pagify();
         Pagify.snappy().init({});

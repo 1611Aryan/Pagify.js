@@ -15,9 +15,11 @@ class pagify {
     outputMessage: string
     pages: NodeList
     inputs: NodeList
+    selects: NodeList
     textAreas: NodeList
     inputEmptyCounter: number
     textAreaEmptyCounter: number
+    selectEmptyCounter: number
 
     constructor() {
         this.prev = (<HTMLElement>document.querySelector('#previous_button'));
@@ -33,6 +35,7 @@ class pagify {
         this.movePageBy = (<HTMLElement>document.querySelector('.pageContainer')).offsetWidth;
     }
     //?Voila Magic
+
     init = ({ time = '0.5s', curve = 'ease' } = {}) => {
         this.time = time;
         this.curve = curve;
@@ -64,8 +67,11 @@ class pagify {
         });
         this.resize();
     }
+
     //?The page and button changing mechanism
+
     //?The wiring
+
     pageChange = (posCounter: number) => {
 
         if (posCounter == 0) {
@@ -85,16 +91,23 @@ class pagify {
         this.location = (posCounter * this.movePageBy / this.noOfPage);
         this.form.style.transform = `translateX(-${this.location}px)`
     }
+
     //?Pages still change perfectly even if the window size is changed
+
     //?Don't Change
+
     resize = () => {
         addEventListener('resize', () => {
             this.movePageBy = (<HTMLElement>document.querySelector('.pageContainer')).offsetWidth;
         })
     }
+
     //*Extra Functions
+
     //?Outputs the passed message to the passed pageNumber 
+
     //?Message can be displayed in form of alert and innerHTML of an element with class ".pagifyMessage"
+
     display = (displayAlert: number, displayMessage: number, pageNumber: number, message: string) => {
         if (displayAlert === 1) {
             window.alert(message);
@@ -105,17 +118,24 @@ class pagify {
             };
         }
     }
+
     //?
+
     //?Removes the transition
+
     snappy = () => {
         this.time = '0s';
         this.root.style.setProperty('--pageTransitionTime', this.time);
         //?returns the same object so that it can be chained with init()
         return this;
     }
+
     //?
+
     //?Checks if any form element is empty or not selected
+
     inputCheck = ({ displayAlert = 1, displayMessage = 0 } = {}, message = "Please complete the Form") => {
+
         this.displayAlert = displayAlert;
         this.displayMessage = displayMessage;
         this.outputMessage = message;
@@ -123,15 +143,20 @@ class pagify {
         //TODO Make the code faster rn it is O(N^2)
         //TODO Along with alert give option of displaying an error message instead ✔✔
         this.submit.addEventListener('click', (e) => {
+            e.preventDefault();
             this.inputEmptyCounter = 1;
             this.textAreaEmptyCounter = 1;
+            this.selectEmptyCounter = 1;
             //?Selects all the pages
             this.pages = document.querySelectorAll('.page');
             for (let i = 0; i < this.pages.length; i++) {
                 //?Loops through all the pages
+
                 //?Finds any input  or textarea and if it is empty returns to that page and alerts an error message
+
                 //*Selects all inputs
-                this.inputs = (<Element>this.pages[i]).querySelectorAll(":scope input");
+
+                this.inputs = (<Element>this.pages[i]).querySelectorAll(':scope input:not([type="reset"]):not([type="submit"]):not([type="radio"]):not([type="checkbox"])');
                 for (let j = 0; j < this.inputs.length; j++) {
                     if ((<HTMLInputElement>this.inputs[j]).value == '') {
                         e.preventDefault();
@@ -142,7 +167,9 @@ class pagify {
                         return false;
                     }
                 }
+
                 //*Selects all TextAreas
+
                 this.textAreas = (<Element>this.pages[i]).querySelectorAll(":scope textarea");
                 for (let j = 0; j < this.textAreas.length; j++) {
                     //?Checks if any input on the same page is already identified to be empty
@@ -158,13 +185,33 @@ class pagify {
                         return false;
                     }
                 }
-                if (this.inputEmptyCounter == 0 || this.textAreaEmptyCounter == 0) {
+
+                //*Selects all selectOptions
+
+                this.selects = (<Element>this.pages[i]).querySelectorAll(":scope select");
+                for (let j = 0; j < this.selects.length; j++) {
+                    if ((<HTMLSelectElement>this.selects[j]).options[(<HTMLSelectElement>this.selects[j]).selectedIndex].text === "Please Select an Option") {
+                        if (this.inputEmptyCounter == 0 || this.textAreaEmptyCounter == 0) {
+                            return false;
+                        }
+                        e.preventDefault();
+                        this.posCounter = i;
+                        this.pageChange(this.posCounter);
+                        this.selectEmptyCounter = 0;
+                        this.display(this.displayAlert, this.displayMessage, i, this.outputMessage);
+                        return false;
+                    }
+                }
+
+                if (this.inputEmptyCounter == 0 || this.textAreaEmptyCounter == 0 || this.selectEmptyCounter == 0) {
                     return false;
                 }
             }
         })
     }
+
     //?
+
     //*
 }
 

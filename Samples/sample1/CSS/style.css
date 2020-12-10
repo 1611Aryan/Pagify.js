@@ -167,7 +167,8 @@ main form .userPageContainer .userPage .formChild .inputContainer input {
 }
 
 main form .userPageContainer .userPage .formChild .inputContainer input,
-main form .userPageContainer .userPage .formChild .inputContainer textarea {
+main form .userPageContainer .userPage .formChild .inputContainer textarea,
+main form .userPageContainer .userPage .formChild .inputContainer select {
   font-family: 'Montserrat', sans-serif;
   color: var(--fontColor);
   font-size: clamp(0.85, 3vw, 1.35rem);
@@ -187,12 +188,19 @@ main form .userPageContainer .userPage .formChild .inputContainer textarea {
 
 main form .userPageContainer .userPage .formChild .inputContainer input:hover, main form .userPageContainer .userPage .formChild .inputContainer input:focus,
 main form .userPageContainer .userPage .formChild .inputContainer textarea:hover,
-main form .userPageContainer .userPage .formChild .inputContainer textarea:focus {
+main form .userPageContainer .userPage .formChild .inputContainer textarea:focus,
+main form .userPageContainer .userPage .formChild .inputContainer select:hover,
+main form .userPageContainer .userPage .formChild .inputContainer select:focus {
   background: rgba(212, 212, 212, 0.3);
 }
 
 main form .userPageContainer .userPage .formChild .inputContainer textarea {
   resize: vertical;
+}
+
+main form .userPageContainer .userPage .formChild .inputContainer option {
+  background: #3a3a3a;
+  color: #ffe657;
 }
 
 main form .btnContainer {

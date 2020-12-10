@@ -1,6 +1,7 @@
 # Pagify.JS
 
 Pagify will transform your forms to a multi page format with just a few extra lines of code.
+
 ![gif](https://github.com/1611Aryan/Pagify.js/Media/excited.gif)
 
 ---

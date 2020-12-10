@@ -2,6 +2,21 @@
 
 Pagify will transform your forms to a multi page format with just a few extra lines of code.
 
+---
+
+## Contents
+
+- [Getting Started](https://github.com/1611Aryan/Pagify.js#getting-started)
+- [Setup](https://github.com/1611Aryan/Pagify.js#setup)
+- [Transitions](https://github.com/1611Aryan/Pagify.js#tweaking-the-transitions)
+- [Extra Features](https://github.com/1611Aryan/Pagify.js#extra-features)
+  - [Snappy](https://github.com/1611Aryan/modularForm.github.io/tree/master#snappy)
+  - [Input Check](https://github.com/1611Aryan/modularForm.github.io/tree/master#input-check)
+- [Samples](https://github.com/1611Aryan/modularForm.github.io/tree/master#Samples)
+  - [Sample 1](https://github.com/1611Aryan/modularForm.github.io/tree/master#Sample-1)
+
+---
+
 ## Getting Started
 
 ###### NPM SETUP
@@ -110,3 +125,9 @@ To display your message in a HTML element on the empty page:
 > //Message is optional
 > Pagify.inputCheck({displayAlert:1,displayMessage:1},"Message");
 > ```
+
+---
+
+## Samples
+
+> [Sample1](https://1611aryan.github.io/Pagify.js/Samples/sample1/)

@@ -168,11 +168,3 @@ Currently _inputCheck_ supports:
 > [Sample1](https://1611aryan.github.io/Pagify.js/Samples/sample1/)
 >
 > ![Screenshot](https://1611aryan.github.io/Pagify.js/Media/sample1.png)
-
-```
-
-```
-
-```
-
-```

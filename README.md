@@ -78,6 +78,7 @@ Your form has now successfully been ✨Pagified✨
 To use pagify on multiple forms just pass the class of the forms to be pagified as the argument of the constructor function
 
 > ```JAVASCRIPT
+> //For a single form passing the class of the form is optional
 > const Pagify1= new pagify('.form1');
 > Pagify1.init();
 > //Use the other functions as usual

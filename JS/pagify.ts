@@ -25,7 +25,7 @@ class pagify {
     textAreaEmptyCounter: number
     selectEmptyCounter: number
     formClass: String
-    constructor(formClass = '') {
+    constructor(formClass = 'form') {
         this.formClass = formClass;
         this.prev = (<HTMLElement>document.querySelector(`${this.formClass} #previous_button`));
         this.prev.style.display = 'none';

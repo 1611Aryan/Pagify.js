@@ -10,6 +10,7 @@ Pagify will transform your forms to a multi page format with just a few extra li
 
 - [Getting Started](https://github.com/1611Aryan/Pagify.js#getting-started)
 - [Setup](https://github.com/1611Aryan/Pagify.js#setup)
+- [Multiple Form Setup](https://github.com/1611Aryan/Pagify.js#multiple-form-setup)
 - [Transitions](https://github.com/1611Aryan/Pagify.js#tweaking-the-transitions)
 - [Extra Features](https://github.com/1611Aryan/Pagify.js#extra-features)
   - [Snappy](https://github.com/1611Aryan/modularForm.github.io/tree/master#snappy)
@@ -39,7 +40,7 @@ Pagify will transform your forms to a multi page format with just a few extra li
 
 ---
 
-#### Setup
+## Setup
 
 It is super easy to get pagify up and performing wonders
 
@@ -67,8 +68,25 @@ It is super easy to get pagify up and performing wonders
 > ```
 
 Yupp that was it.
-
+<br>
 Your form has now successfully been ✨Pagified✨
+
+---
+
+### Multiple Page Setup
+
+To use pagify on multiple forms just pass the class of the forms to be pagified as the argument of the constructor function
+
+> ```JAVASCRIPT
+> const Pagify1= new pagify('.form1');
+> Pagify1.init();
+> //Use the other functions as usual
+> const Pagify2= new pagify('.form2');
+> Pagify2.init();
+> ```
+
+Now Both the forms have been pagified✨<br>
+Use this to pagify any number of forms
 
 ---
 
@@ -83,26 +101,26 @@ Pass an object defining the duration and curve of transitions as argument of the
 
 ---
 
-### Extra Features!!!
+## Extra Features!!!
 
 Not satisfied yet?
-
+<br>
 Don't worry we have some more tricks up our sleeve
 
 - [Snappy](https://github.com/1611Aryan/modularForm.github.io/tree/master#snappy)
 - [Input Check](https://github.com/1611Aryan/modularForm.github.io/tree/master#input-check)
 
-#### Snappy
+### Snappy
 
 Not a fan of page transititions?
-
+<br>
 Use the snappy function and moving between pages hasn't been any faster!!
 
 > ```JAVASCRIPT
 > Pagify.snappy().init();
 > ```
 
-#### Input Check
+### Input Check
 
 There are two types of people:
 

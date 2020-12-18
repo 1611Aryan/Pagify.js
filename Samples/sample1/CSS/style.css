@@ -233,9 +233,4 @@ main form .btnContainer button:hover {
   background: var(--buttonHoverBg);
   color: var(--buttonBg);
 }
-
-main form .btnContainer #previous_button,
-main form .btnContainer #submit_button {
-  display: none;
-}
 /*# sourceMappingURL=style.css.map */

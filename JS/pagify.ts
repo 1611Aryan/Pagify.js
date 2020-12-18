@@ -28,8 +28,10 @@ class pagify {
 
     constructor() {
         this.prev = (<HTMLElement>document.querySelector('#previous_button'));
+        this.prev.style.display = 'none';
         this.next = (<HTMLElement>document.querySelector('#next_button'));
         this.submit = (<HTMLElement>document.querySelector('#submit_button'));
+        this.submit.style.display = 'none';
         this.form = (<HTMLElement>document.querySelector('.pageContainer'));
         this.noOfPage = document.getElementsByClassName('page').length;
         //?Sets the value of numOfPage in css variables

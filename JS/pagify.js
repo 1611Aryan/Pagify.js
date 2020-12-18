@@ -182,8 +182,10 @@ class pagify {
             });
         };
         this.prev = document.querySelector('#previous_button');
+        this.prev.style.display = 'none';
         this.next = document.querySelector('#next_button');
         this.submit = document.querySelector('#submit_button');
+        this.submit.style.display = 'none';
         this.form = document.querySelector('.pageContainer');
         this.noOfPage = document.getElementsByClassName('page').length;
         //?Sets the value of numOfPage in css variables

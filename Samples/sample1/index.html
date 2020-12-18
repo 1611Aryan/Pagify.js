@@ -21,7 +21,7 @@
         </picture>
     </div>
     <main>
-        <form>
+        <form class="form1">
             <div class="heading">
                 <h2>Form Heading</h2>
             </div>
@@ -162,7 +162,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             <div class="btnContainer">
                 <button id="previous_button">Previous</button>
@@ -172,11 +171,14 @@
         </form>
     </main>
 
+
+
     <script src="https://cdn.jsdelivr.net/gh/1611Aryan/modularForm.github.io/JS/pagify.min.js"></script>
     <!-- <script src="../../JS/pagify.js"></script> -->
     <script>
         const Pagify = new pagify();
-        Pagify.snappy().init({});
+        Pagify.init()
+            //Pagify.snappy();
         Pagify.inputCheck();
     </script>
 </body>

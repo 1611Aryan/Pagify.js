@@ -1,5 +1,5 @@
 class pagify {
-    constructor() {
+    constructor(formClass = '') {
         //?Voila Magic
         this.init = ({ time = '0.5s', curve = 'ease' } = {}) => {
             this.time = time;
@@ -55,7 +55,7 @@ class pagify {
         //?Don't Change
         this.resize = () => {
             addEventListener('resize', () => {
-                this.movePageBy = document.querySelector('.pageContainer').offsetWidth;
+                this.movePageBy = document.querySelector(`${this.formClass} .pageContainer`).offsetWidth;
             });
         };
         //*Extra Functions
@@ -82,8 +82,9 @@ class pagify {
         this.snappy = () => {
             this.time = '0s';
             this.root.style.setProperty('--pageTransitionTime', this.time);
+            console.log();
             //?returns the same object so that it can be chained with init()
-            return this;
+            //return this;
         };
         //?Checks if any form element is empty or not selected
         this.inputCheck = ({ displayAlert = 1, displayMessage = 0 } = {}, message = "Please complete the Form") => {
@@ -98,7 +99,7 @@ class pagify {
                 this.textAreaEmptyCounter = 1;
                 this.selectEmptyCounter = 1;
                 //?Selects all the pages
-                this.pages = document.querySelectorAll('.page');
+                this.pages = document.querySelectorAll(`${this.formClass} .page`);
                 for (let i = 0; i < this.pages.length; i++) {
                     //?Loops through all the pages
                     //?Finds any input  or textarea and if it is empty returns to that page and alerts an error message
@@ -181,19 +182,20 @@ class pagify {
                 }
             });
         };
-        this.prev = document.querySelector('#previous_button');
+        this.formClass = formClass;
+        this.prev = document.querySelector(`${this.formClass} #previous_button`);
         this.prev.style.display = 'none';
-        this.next = document.querySelector('#next_button');
-        this.submit = document.querySelector('#submit_button');
+        this.next = document.querySelector(`${this.formClass} #next_button`);
+        this.submit = document.querySelector(`${this.formClass} #submit_button`);
         this.submit.style.display = 'none';
-        this.form = document.querySelector('.pageContainer');
-        this.noOfPage = document.getElementsByClassName('page').length;
+        this.form = document.querySelector(`${this.formClass} .pageContainer`);
+        this.noOfPage = document.querySelectorAll(`${this.formClass} .page`).length;
         //?Sets the value of numOfPage in css variables
-        this.root = document.documentElement;
-        this.root.style.setProperty('--numOfPages', this.noOfPage.toString());
+        this.root = this.form;
+        this.root.style.setProperty(`--numOfPages`, this.noOfPage.toString());
         //?
         this.posCounter = 0;
-        this.movePageBy = document.querySelector('.pageContainer').offsetWidth;
+        this.movePageBy = document.querySelector(`${this.formClass} .pageContainer`).offsetWidth;
     }
 }
 //?Pass a object with property of time and beizer curve for page transition time and transition curve default value is 0.5s and ease

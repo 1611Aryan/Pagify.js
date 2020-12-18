@@ -24,26 +24,25 @@ class pagify {
     radioCheckedCounter: number
     textAreaEmptyCounter: number
     selectEmptyCounter: number
-
-
-    constructor() {
-        this.prev = (<HTMLElement>document.querySelector('#previous_button'));
+    formClass: String
+    constructor(formClass = '') {
+        this.formClass = formClass;
+        this.prev = (<HTMLElement>document.querySelector(`${this.formClass} #previous_button`));
         this.prev.style.display = 'none';
-        this.next = (<HTMLElement>document.querySelector('#next_button'));
-        this.submit = (<HTMLElement>document.querySelector('#submit_button'));
+        this.next = (<HTMLElement>document.querySelector(`${this.formClass} #next_button`));
+        this.submit = (<HTMLElement>document.querySelector(`${this.formClass} #submit_button`));
         this.submit.style.display = 'none';
-        this.form = (<HTMLElement>document.querySelector('.pageContainer'));
-        this.noOfPage = document.getElementsByClassName('page').length;
+        this.form = (<HTMLElement>document.querySelector(`${this.formClass} .pageContainer`));
+        this.noOfPage = document.querySelectorAll(`${this.formClass} .page`).length;
         //?Sets the value of numOfPage in css variables
-        this.root = document.documentElement;
-        this.root.style.setProperty('--numOfPages', this.noOfPage.toString());
+        this.root = this.form
+        this.root.style.setProperty(`--numOfPages`, this.noOfPage.toString());
         //?
         this.posCounter = 0;
-        this.movePageBy = (<HTMLElement>document.querySelector('.pageContainer')).offsetWidth;
+        this.movePageBy = (<HTMLElement>document.querySelector(`${this.formClass} .pageContainer`)).offsetWidth;
 
     }
     //?Voila Magic
-
     init = ({ time = '0.5s', curve = 'ease' } = {}) => {
         this.time = time;
         this.curve = curve;
@@ -62,7 +61,6 @@ class pagify {
                 this.pageChange(this.posCounter);
             }
         });
-
         this.next.addEventListener('click', e => {
             e.preventDefault();
             this.posCounter++;
@@ -75,11 +73,8 @@ class pagify {
         });
         this.resize();
     }
-
     //?The page and button changing mechanism
-
     //?The wiring
-
     pageChange = (posCounter: number) => {
 
         if (posCounter == 0) {
@@ -99,19 +94,14 @@ class pagify {
         this.location = (posCounter * this.movePageBy / this.noOfPage);
         this.form.style.transform = `translateX(-${this.location}px)`
     }
-
     //?Pages still change perfectly even if the window size is changed
-
     //?Don't Change
-
     resize = () => {
         addEventListener('resize', () => {
-            this.movePageBy = (<HTMLElement>document.querySelector('.pageContainer')).offsetWidth;
+            this.movePageBy = (<HTMLElement>document.querySelector(`${this.formClass} .pageContainer`)).offsetWidth;
         })
     }
-
     //*Extra Functions
-
     //?Outputs the passed message to the passed pageNumber 
     //?Message can be displayed in form of alert and innerHTML of an element with class ".pagifyMessage"
     display = (displayAlert: number, displayMessage: number, pageNumber: number, message: string) => {
@@ -124,23 +114,20 @@ class pagify {
             };
         }
     }
-
     //?This function prevents the form from submitting displays the error message and changes the page's location
     whateverItTakes = (i: number) => {
         this.posCounter = i;
         this.pageChange(this.posCounter);
         this.display(this.displayAlert, this.displayMessage, i, this.outputMessage);
     }
-
     //?Removes the transition
     snappy = () => {
         this.time = '0s';
         this.root.style.setProperty('--pageTransitionTime', this.time);
+        console.log()
         //?returns the same object so that it can be chained with init()
-        return this;
+        //return this;
     }
-
-
     //?Checks if any form element is empty or not selected
     inputCheck = ({ displayAlert = 1, displayMessage = 0 } = {}, message = "Please complete the Form") => {
         this.displayAlert = displayAlert;
@@ -154,7 +141,7 @@ class pagify {
             this.textAreaEmptyCounter = 1;
             this.selectEmptyCounter = 1;
             //?Selects all the pages
-            this.pages = document.querySelectorAll('.page');
+            this.pages = document.querySelectorAll(`${this.formClass} .page`);
             for (let i = 0; i < this.pages.length; i++) {
                 //?Loops through all the pages
                 //?Finds any input  or textarea and if it is empty returns to that page and alerts an error message
@@ -240,6 +227,5 @@ class pagify {
     //?
     //*
 }
-
 //?Pass a object with property of time and beizer curve for page transition time and transition curve default value is 0.5s and ease
 

@@ -72,6 +72,7 @@ class pagify {
             }
         });
         this.resize();
+        console.log("%cBrought to you by Aryan🤍", "background:white;color:black;font-family:poppins;padding:1rem;font-size:1rem;border-radius:10px;");
     }
     //?The page and button changing mechanism
     //?The wiring
@@ -124,7 +125,7 @@ class pagify {
     snappy = () => {
         this.time = '0s';
         this.root.style.setProperty('--pageTransitionTime', this.time);
-        console.log()
+
         //?returns the same object so that it can be chained with init()
         //return this;
     }

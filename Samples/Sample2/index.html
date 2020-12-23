@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample 2</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/1611Aryan/modularForm.github.io/CSS/pagify.min.css">
+
+</head>
+
+<body>
+    <h2>Sample 2</h2>
+    <form action="">
+        <div class="pageContainer">
+            <div class="page">
+                <label for="name">Name :</label>
+                <input type="text" name="name">
+            </div>
+            <br>
+            <div class="page">
+                <label for="name">Roll Number :</label>
+                <input type="text" name="rollNumber">
+            </div>
+            <div class="page">
+                <label for="name">Admission Number :</label>
+                <input type="text" name="admnNumber">
+            </div>
+        </div>
+        <div class="btnContainer">
+            <button id="previous_button">Previous</button>
+            <button id="next_button">Next</button>
+            <button id="submit_button">Submit</button>
+        </div>
+    </form>
+</body>
+<script src="https://cdn.jsdelivr.net/gh/1611Aryan/modularForm.github.io/JS/pagify.min.js"></script>
+<script>
+    const Pagify = new pagify();
+    Pagify.init();
+</script>
+
+</html>
